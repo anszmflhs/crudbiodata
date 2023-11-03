@@ -22,5 +22,5 @@ Route::get('/', [BiodataController::class, 'index'])->name('biodata.index');
 Route::get('/create', [BiodataController::class, 'create'])->name('biodata.create');
 Route::post('/', [BiodataController::class, 'store'])->name('biodata.store');
 Route::get('/{id}', [BiodataController::class, 'edit'])->name('biodata.edit');
-Route::patch('/{id}/update', [BiodataController::class, 'update'])->name('biodata.update');
+Route::patch('/{id}', [BiodataController::class, 'update'])->name('biodata.update');
 Route::delete('/{id}', [BiodataController::class, 'destroy'])->name('biodata.delete');

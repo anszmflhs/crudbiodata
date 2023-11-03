@@ -47,16 +47,17 @@ class BiodataController extends Controller
         // dd($biodata);
         return view('edit', compact('biodata'));
     }
-    public function update(Request $request, Biodata $biodata)
+    public function update(Request $request, Biodata $biodata, $id)
     {
         // dd($request->all());
-        $validatedData = $request->validate([
-            'name',
-            'photo',
-            'address',
-            'phone',
-            'email',
+        $validatedData = $request->only([
+            'name' =>$request->input('name'),
+            'photo' =>$request->input('photo'),
+            'address' =>$request->input('address'),
+            'phone' =>$request->input('phone'),
+            'email' =>$request->input('email'),
         ]);
+        $biodata = $biodata::where('id', $id)->firstorFail();
 
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
@@ -72,7 +73,7 @@ class BiodataController extends Controller
         }
 
         $biodata->update($validatedData);
-        dd($validatedData);
+        // dd($validatedData);
 
         return redirect()->route('biodata.index')->with('success', 'Biodata Updated Successfully');
     }

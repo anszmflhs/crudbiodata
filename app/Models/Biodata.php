@@ -11,5 +11,4 @@ class Biodata extends Model
 
     // protected $guarded = [];
     protected $fillable = ['name', 'photo', 'address', 'phone', 'email'];
-    // protected $fillable = ['name','photo','address','phone','email'];
 }

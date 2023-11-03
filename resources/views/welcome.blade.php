@@ -11,7 +11,7 @@
     <h1 class="text-3xl m-4 font-bold text-black">
         Crud Biodata
     </h1>
-    <a href="{{ url('/create') }}" class="ml-4 mr-4 mb-4 px-4 py-2 w-40 bg-blue-500 hover.bg-blue-700 text-white font-semibold font-sans block">
+    <a href="{{ url('/create') }}" class="ml-4 mr-4 mb-4 px-4 py-2 w-40 bg-blue-500 hover:bg-blue-700 text-white font-semibold font-sans block">
         Tambah Biodata
     </a>
     <table class="ml-4 mr-4 table-auto w-full">
